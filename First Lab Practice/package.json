@@ -1,0 +1,13 @@
+{
+  "name": "first-lab-practice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "hello.js",
+  "scripts": {
+    "dev": "node main.js" 
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module"
+}
