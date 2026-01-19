@@ -1,15 +1,5 @@
 import http from 'http';
-import fs from 'fs';
-
-const logger = (req, res) => {
-    const log = `${new Date().toISOString()} - ${req.method} ${req.url}`;
-
-    fs.appendFile('server.log', log + '\n', (err) => {
-        if (err) {
-            console.error('Failed to write to log file:', err);
-        }
-    });
-};
+import logger from './logger.js';
 
 const server = http.createServer((req, res) => {
     console.log('Received request for:', req.url);
