@@ -1,9 +1,13 @@
 import express from 'express';
 import users from './MOCK_DATA.json' with { type: "json" };
 import fs from "fs/promises"
+import loggerMiddleware from './middleware/logger.js';
 
 const app = express();
 const PORT = 3000;
+
+// Apply logging middleware to all routes
+app.use(loggerMiddleware);
 
 app.get('/users', (req, res) => {
   const html = `
