@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student List</title>
+  </head>
+  <body>
+    <h1>Student List</h1>
+    <a href="/student/create">Add New Student</a>
+    <!-- Correct URL depending on your urls.py -->
+    <ul>
+      {% for student in students %}
+      <li>
+        <a href="/student/{{ student.pk }}">{{ student.name }}</a> - {{ student.email }}
+        <a href="/student/update/{{ student.pk }}">Edit</a>
+        <form
+          method="POST"
+          action="/student/delete/{{ student.pk }}"
+          style="display: inline"
+        >
+          {% csrf_token %}
+          <button type="submit">Delete</button>
+        </form>
+      </li>
+      {% empty %}
+      <li>No students found.</li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
