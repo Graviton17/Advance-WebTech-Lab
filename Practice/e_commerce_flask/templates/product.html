@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Details</title>
+  </head>
+  <body>
+    <h1>{{ product.name }}</h1>
+    {% if message %}
+    <p style="color: green">{{ message }}</p>
+    {% endif %}
+    <p><strong>Description:</strong> {{ product.description }}</p>
+    <p><strong>Price:</strong> ${{ product.price }}</p>
+    <p><strong>Category:</strong> {{ product.category }}</p>
+    <p><strong>Stock Available:</strong> {{ product.available_stock }}</p>
+    <hr />
+    <a href="{{ url_for('product.list_products') }}">Back to Products List</a> |
+    <a href="{{ url_for('product.update_product', id=product.id) }}"
+      >Edit Product</a
+    >
+  </body>
+</html>

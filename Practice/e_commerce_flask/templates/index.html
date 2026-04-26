@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-Commerce Admin</title>
+  </head>
+  <body>
+    <h1>E-Commerce Admin Dashboard</h1>
+    <nav>
+      <ul>
+        <li>
+          <a href="{{ url_for('product.list_products') }}">View All Products</a>
+        </li>
+        <li>
+          <a href="{{ url_for('product.create_product') }}"
+            >Create New Product</a
+          >
+        </li>
+      </ul>
+    </nav>
+  </body>
+</html>
